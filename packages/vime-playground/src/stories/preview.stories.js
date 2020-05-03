@@ -9,14 +9,17 @@ export default {
 const base = (props) => ({
   Component: InteractiveView,
   props: {
+    // InteractiveView
     Component: Preview,
-    events: config.Events.PREVIEW,
-    smallView: true,
+    interactiveEvents: config.Events.PREVIEW,
+    makeInteractiveViewSmall: true,
+
+    // Component Props
     ...props,
   },
 });
 
-export const File = () => base({ poster: config.File.POSTER });
+export const File = () => base({ src: config.File.POSTER });
 export const Youtube = () => base({ src: config.YouTube.SRC });
 export const Vimeo = () => base({ src: config.Vimeo.SRC });
 export const Dailymotion = () => base({ src: config.Dailymotion.SRC });
